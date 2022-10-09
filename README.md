@@ -2,14 +2,28 @@
 
 Project description with clear goal.
 
+![Screenshot 1]()
+
+![Screenshot 2]()
+
 ## Links
 
-- Local:
-  - http://localhost:3000
-- Production:
-  - https://project.vercel.app
-  - https://project.netlify.app
-  - https://project.example.com
+### Production
+
+- https://project.vercel.app
+- https://project.netlify.app
+- https://project.example.com
+
+### Local
+
+- http://localhost:3000
+- http://localhost:5173
+
+### Design
+
+- Figma Mockup: https://figma.com
+- Figma Prototype: https://figma.com
+- Whimsical Flowchart: https://whimsical.com
 
 ## Main Features
 
