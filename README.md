@@ -83,3 +83,128 @@ Start in production mode:
 ```sh
 npm start
 ```
+
+## Deployment
+
+Details on deployment using Vercel or Netlify here.
+
+## Data Model
+
+### Resources
+
+```json
+{
+  "id": "abc123",
+  "title": "Resource name",
+  "description": "Some details about\nthe resource",
+  "isAvailable": true,
+  "quantity": 100,
+  "createdAt": "",
+  "updatedAt": ""
+}
+```
+
+```graphql
+type Resource {
+  id: String!
+  title: String!
+  description: String
+  isAvailable: Boolean!
+  quantity: Number!
+  tags: [Tag!]!
+  createdAt: String!
+  updatedAt: String!
+}
+```
+
+### Tags
+
+```json
+{
+  "id": "abc123",
+  "name": "Tag name"
+}
+```
+
+```graphql
+type Tag {
+  id: String!
+  name: String!
+}
+```
+
+### User
+
+```json
+{
+  "id": "abc123",
+  "name": "First Last",
+  "email": "firstlast@user.com"
+}
+```
+
+```graphql
+type User {
+  id: String!
+  name: String!
+  email: String!
+}
+```
+
+## REST API Documentation
+
+Base URL: `https://api.example.com`
+
+### Resources
+
+| Endpoint         | Method   | Description               |
+| ---------------- | -------- | ------------------------- |
+| `/resources`     | `GET`    | Get all resources         |
+| `/resources/:id` | `GET`    | Get one resource by id    |
+| `/resources`     | `POST`   | Create new resource       |
+| `/resources/:id` | `PUT`    | Update one resource by id |
+| `/resources/:id` | `PATCH`  | Patch one resource by id  |
+| `/resources`     | `DELETE` | Remove all resources      |
+| `/resources/:id` | `DELETE` | Remove one resource by id |
+
+### Auth
+
+| Endpoint        | Method | Description                    |
+| --------------- | ------ | ------------------------------ |
+| `/auth/signup`  | `POST` | Sign up new account            |
+| `/auth/signin`  | `POST` | Sign in to existing account    |
+| `/auth/signout` | `POST` | Sign out authenticated account |
+
+## GraphQL API Documentation
+
+Base URL: `https://api.example.com/graphql`
+
+```graphql
+query getAllResources {
+  resources {
+    id
+    title
+  }
+}
+```
+
+```graphql
+query getOneResourceById {
+  resource(id: "abc123") {
+    id
+    title
+  }
+}
+```
+
+```graphql
+mutation createNewResource {
+  createResource(
+    title: "New resource name"
+    description: "More details about\nthe new resource."
+  ) {
+    id
+    title
+  }
+}
+```
